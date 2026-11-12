@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Muse — Theo dõi dự án Web3</title>
+<style>
+  :root{--bg:#0b1220;--card:#111a2e;--line:#22304d;--text:#e8eef7;--muted:#93a4bd;--teal:#2dd4bf;--gold:#f5c451;--green:#34d399;--red:#f87171;--amber:#fbbf24}
+  *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text)}
+  .wrap{max-width:1080px;margin:0 auto;padding:24px 16px 64px}
+  header h1{font-size:26px;margin:0 0 4px} header p{color:var(--muted);margin:0 0 20px}
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-bottom:20px}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .stat .k{color:var(--muted);font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+  .stat .v{font-size:18px;font-weight:600;margin-top:4px;word-break:break-all}
+  .toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;align-items:center}
+  .tab{border:1px solid var(--line);background:transparent;color:var(--text);padding:8px 14px;border-radius:999px;cursor:pointer;font-size:14px}
+  .tab.active{background:var(--teal);color:#06251f;border-color:var(--teal);font-weight:600}
+  #search{flex:1;min-width:180px;background:var(--card);border:1px solid var(--line);border-radius:999px;color:var(--text);padding:9px 14px;font-size:14px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:14px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px}
+  .card h3{margin:0;font-size:17px} .ticker{color:var(--gold);font-weight:600}
+  .badge{display:inline-block;font-size:11px;padding:3px 9px;border-radius:999px;margin-left:8px;vertical-align:2px}
+  .b-joined{background:rgba(52,211,153,.15);color:var(--green);border:1px solid var(--green)}
+  .b-watching{background:rgba(251,191,36,.12);color:var(--amber);border:1px solid var(--amber)}
+  .b-rejected{background:rgba(248,113,113,.12);color:var(--red);border:1px solid var(--red)}
+  .cat{color:var(--muted);font-size:13px;margin:6px 0 10px}
+  .row{font-size:13.5px;margin:5px 0;line-height:1.45}.row b{color:var(--muted);font-weight:500}
+  .links{margin-top:10px;font-size:13.5px}.links a{color:var(--teal);text-decoration:none;margin-right:14px}.links a:hover{text-decoration:underline}
+  footer{color:var(--muted);font-size:13px;margin-top:28px;line-height:1.6}
+  footer a{color:var(--teal)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>🛰️ Muse — Theo dõi dự án Web3</h1>
+    <p>Sổ theo dõi công khai của tài khoản săn kèo <b>@muse1852</b>. Mọi số liệu lấy từ sổ cái thật của chiến dịch; dự án ghi “không đảm bảo” thì trang này cũng ghi vậy. Cập nhật lần cuối: <span id="updated">—</span></p>
+  </header>
+  <section class="stats" id="stats"></section>
+  <div class="toolbar">
+    <button class="tab active" data-f="all">Tất cả</button>
+    <button class="tab" data-f="joined">Đang tham gia</button>
+    <button class="tab" data-f="watching">Đang theo dõi</button>
+    <button class="tab" data-f="rejected">Đã loại</button>
+    <input id="search" type="search" placeholder="Tìm theo tên / ticker…">
+  </div>
+  <section class="grid" id="grid"></section>
+  <footer>
+    Cách cập nhật trang này: sửa file <b>projects.json</b> trong repo
+    <a href="https://github.com/muse1852/project-tracker" target="_blank" rel="noopener">github.com/muse1852/project-tracker</a>
+    (nút Edit → Commit) — trang tự làm mới sau khoảng 1 phút. Hoặc nhắn cho Muse để Muse cập nhật.
+    Đây không phải lời khuyên tài chính.
+  </footer>
+</div>
+<script>
+const LABEL={joined:"Đang tham gia",watching:"Đang theo dõi",rejected:"Đã loại"};
+let DATA=null, filter="all", q="";
+function esc(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+function link(url,text){return url?`<a href="${esc(url)}" target="_blank" rel="noopener">${text}</a>`:""}
+function render(){
+  const grid=document.getElementById("grid");
+  const list=DATA.projects.filter(p=>(filter==="all"||p.status===filter)&&(p.name+" "+(p.ticker||"")).toLowerCase().includes(q));
+  grid.innerHTML=list.map(p=>`
+   <article class="card">
+     <h3>${esc(p.name)} ${p.ticker?`<span class="ticker">$${esc(p.ticker)}</span>`:""}<span class="badge b-${p.status}">${LABEL[p.status]}</span></h3>
+     <div class="cat">${esc(p.category)} · ${esc(p.chain)} · Chi phí vào: ${esc(p.cost)}</div>
+     <div class="row"><b>Funding:</b> ${esc(p.funding)}</div>
+     <div class="row"><b>Incentive:</b> ${esc(p.incentive)}</div>
+     <div class="row"><b>Điểm / tiến độ:</b> ${esc(p.points)}</div>
+     <div class="row"><b>Ví:</b> ${esc(p.walletStatus||"—")}</div>
+     <div class="row"><b>Hạn / mùa:</b> ${esc(p.deadline)}</div>
+     <div class="row"><b>Ghi chú:</b> ${esc(p.notes)}</div>
+     <div class="links">${link(p.officialUrl,"Trang chính thức ↗")}${link(p.inviteUrl,"Tham gia qua link mời ↗")}${link(p.sharePostUrl,"Bài chia sẻ trên X ↗")}</div>
+   </article>`).join("") || "<p>Không có dự án nào khớp.</p>";
+}
+fetch("projects.json").then(r=>r.json()).then(d=>{
+  DATA=d;
+  document.getElementById("updated").textContent=d.updatedAt;
+  const w=d.wallet, c=s=>d.projects.filter(p=>p.status===s).length;
+  document.getElementById("stats").innerHTML=`
+    <div class="stat"><div class="k">Ví burner (BSC)</div><div class="v" style="font-size:12.5px">${esc(w.address)}</div></div>
+    <div class="stat"><div class="k">Vốn đã nạp</div><div class="v">${esc(w.capitalFunded)}</div></div>
+    <div class="stat"><div class="k">Đang giữ</div><div class="v">${esc(w.holdings)} (${esc(w.holdingsValue)})</div></div>
+    <div class="stat"><div class="k">Đã chi / Lãi-lỗ ròng</div><div class="v">${esc(w.cashSpent)} / ${esc(w.netPnl)}</div></div>
+    <div class="stat"><div class="k">Dự án</div><div class="v">${c("joined")} tham gia · ${c("watching")} theo dõi · ${c("rejected")} đã loại</div></div>`;
+  render();
+}).catch(e=>{document.getElementById("grid").innerHTML="<p>Không tải được projects.json.</p>"});
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));b.classList.add("active");filter=b.dataset.f;render()});
+document.getElementById("search").oninput=e=>{q=e.target.value.toLowerCase();render()};
+</script>
+</body>
+</html>
