@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dự án Web3 — Muse</title>
+<style>
+  :root{--bg:#0b1220;--card:#111a2e;--line:#22304d;--text:#e8eef7;--muted:#93a4bd;--teal:#2dd4bf;--gold:#f5c451;--green:#34d399;--red:#f87171;--amber:#fbbf24}
+  *{box-sizing:border-box} body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text)}
+  .wrap{max-width:1080px;margin:0 auto;padding:24px 16px 64px}
+  header h1{font-size:24px;margin:0 0 4px} header p{color:var(--muted);margin:0 0 16px;line-height:1.55}
+  nav.main{display:flex;gap:8px;margin:0 0 20px}
+  nav.main a{border:1px solid var(--line);color:var(--text);padding:8px 14px;border-radius:999px;text-decoration:none;font-size:14px}
+  nav.main a.active{background:var(--teal);color:#06251f;border-color:var(--teal);font-weight:600}
+  nav.main a:hover{border-color:var(--teal)}
+  .toolbar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;align-items:center}
+  .tab{border:1px solid var(--line);background:transparent;color:var(--text);padding:8px 14px;border-radius:999px;cursor:pointer;font-size:14px}
+  .tab.active{background:var(--teal);color:#06251f;border-color:var(--teal);font-weight:600}
+  #search{flex:1;min-width:180px;background:var(--card);border:1px solid var(--line);border-radius:999px;color:var(--text);padding:9px 14px;font-size:14px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:14px 16px;cursor:pointer}
+  .card:hover{border-color:var(--teal)}
+  .card h3{margin:0;font-size:16px} .ticker{color:var(--gold);font-weight:600}
+  .badge{display:inline-block;font-size:11px;padding:3px 9px;border-radius:999px;margin-left:8px;vertical-align:2px}
+  .b-joined{background:rgba(52,211,153,.15);color:var(--green);border:1px solid var(--green)}
+  .b-watching{background:rgba(251,191,36,.12);color:var(--amber);border:1px solid var(--amber)}
+  .b-rejected{background:rgba(248,113,113,.12);color:var(--red);border:1px solid var(--red)}
+  .cat{color:var(--muted);font-size:12.5px;margin:6px 0 8px}
+  .one{font-size:13.5px;margin:4px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .one b{color:var(--muted);font-weight:500}
+  .more{color:var(--teal);font-size:13px;font-weight:600;margin-top:8px}
+  .overlay{position:fixed;inset:0;background:rgba(3,6,12,.72);display:none;align-items:flex-start;justify-content:center;padding:24px 12px;overflow-y:auto;z-index:50}
+  .overlay.open{display:flex}
+  .modal{background:var(--card);border:1px solid var(--line);border-radius:16px;max-width:640px;width:100%;padding:22px;position:relative}
+  .modal h3{margin:0 28px 4px 0;font-size:19px}
+  .modal .close{position:absolute;top:12px;right:14px;background:transparent;border:1px solid var(--line);color:var(--text);border-radius:999px;width:32px;height:32px;cursor:pointer;font-size:15px}
+  .modal .close:hover{border-color:var(--teal);color:var(--teal)}
+  .row{font-size:14px;margin:7px 0;line-height:1.5}.row b{color:var(--muted);font-weight:500}
+  .links{margin-top:12px;font-size:14px}.links a{color:var(--teal);text-decoration:none;margin-right:14px}.links a:hover{text-decoration:underline}
+  footer{color:var(--muted);font-size:13px;margin-top:28px;line-height:1.6}
+  footer a{color:var(--teal)}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>🛰️ Dự án Web3</h1>
+    <p>Kèo miễn phí đang săn của <b>@muse1852</b>: airdrop, DePIN, testnet, play-to-airdrop — thử trên ví burner tách biệt. Thẻ chỉ hiện tóm gọn; <b>bấm vào thẻ</b> để xem toàn bộ chi tiết đã kiểm chứng. Cập nhật lần cuối: <span id="updated">—</span></p>
+  </header>
+  <nav class="main">
+    <a href="index.html">Trang chủ</a>
+    <a href="projects.html" class="active">Dự án Web3</a>
+    <a href="jobs.html">Job tự do</a>
+  </nav>
+  <div class="toolbar">
+    <button class="tab active" data-f="all">Tất cả</button>
+    <button class="tab" data-f="joined">Đang tham gia</button>
+    <button class="tab" data-f="watching">Đang theo dõi</button>
+    <button class="tab" data-f="rejected">Đã loại</button>
+    <input id="search" type="search" placeholder="Tìm theo tên / ticker…">
+  </div>
+  <section class="grid" id="grid"></section>
+  <footer>
+    Dữ liệu lấy từ file <b>projects.json</b> trong repo
+    <a href="https://github.com/muse1852/project-tracker" target="_blank" rel="noopener">github.com/muse1852/project-tracker</a> — sổ cái thật của chiến dịch; dự án ghi “không đảm bảo” thì trang này cũng ghi vậy. Đây không phải lời khuyên tài chính.
+  </footer>
+</div>
+<div class="overlay" id="overlay">
+  <div class="modal" role="dialog" aria-modal="true">
+    <button class="close" id="closeBtn" aria-label="Đóng">✕</button>
+    <div id="modalBody"></div>
+  </div>
+</div>
+<script>
+const LABEL={joined:"Đang tham gia",watching:"Đang theo dõi",rejected:"Đã loại"};
+let DATA=null, filter="all", q="";
+function esc(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+function link(url,text){return url?`<a href="${esc(url)}" target="_blank" rel="noopener">${text}</a>`:""}
+function render(){
+  const grid=document.getElementById("grid");
+  const list=DATA.projects.map((p,i)=>({p,i})).filter(({p})=>(filter==="all"||p.status===filter)&&(p.name+" "+(p.ticker||"")).toLowerCase().includes(q));
+  grid.innerHTML=list.map(({p,i})=>`
+   <article class="card" data-i="${i}" tabindex="0" title="Bấm để xem chi tiết">
+     <h3>${esc(p.name)} ${p.ticker?`<span class="ticker">$${esc(p.ticker)}</span>`:""}<span class="badge b-${p.status}">${LABEL[p.status]}</span></h3>
+     <div class="cat">${esc(p.category)} · ${esc(p.chain)}</div>
+     <div class="one"><b>Chi phí vào:</b> ${esc(p.cost)}</div>
+     <div class="one"><b>Tiến độ:</b> ${esc(p.points)}</div>
+     <div class="one"><b>Hạn / mùa:</b> ${esc(p.deadline)}</div>
+     <div class="more">Xem chi tiết →</div>
+   </article>`).join("") || "<p>Không có dự án nào khớp.</p>";
+  grid.querySelectorAll(".card").forEach(el=>{
+    el.onclick=()=>openModal(+el.dataset.i);
+    el.onkeydown=e=>{if(e.key==="Enter")openModal(+el.dataset.i)};
+  });
+}
+function openModal(i){
+  const p=DATA.projects[i]; if(!p) return;
+  document.getElementById("modalBody").innerHTML=`
+     <h3>${esc(p.name)} ${p.ticker?`<span class="ticker">$${esc(p.ticker)}</span>`:""}<span class="badge b-${p.status}">${LABEL[p.status]}</span></h3>
+     <div class="cat">${esc(p.category)} · ${esc(p.chain)} · Chi phí vào: ${esc(p.cost)}</div>
+     <div class="row"><b>Funding:</b> ${esc(p.funding)}</div>
+     <div class="row"><b>Incentive:</b> ${esc(p.incentive)}</div>
+     <div class="row"><b>Điểm / tiến độ:</b> ${esc(p.points)}</div>
+     <div class="row"><b>Ví:</b> ${esc(p.walletStatus||"—")}</div>
+     <div class="row"><b>Hạn / mùa:</b> ${esc(p.deadline)}</div>
+     <div class="row"><b>Ghi chú:</b> ${esc(p.notes)}</div>
+     <div class="row"><b>Cập nhật:</b> ${esc(p.updatedAt||"—")}</div>
+     <div class="links">${link(p.officialUrl,"Trang chính thức ↗")}${link(p.inviteUrl,"Tham gia qua link mời ↗")}${link(p.sharePostUrl,"Bài chia sẻ trên X ↗")}</div>`;
+  document.getElementById("overlay").classList.add("open");
+}
+function closeModal(){document.getElementById("overlay").classList.remove("open")}
+document.getElementById("closeBtn").onclick=closeModal;
+document.getElementById("overlay").addEventListener("click",e=>{if(e.target.id==="overlay")closeModal()});
+document.addEventListener("keydown",e=>{if(e.key==="Escape")closeModal()});
+fetch("projects.json").then(r=>r.json()).then(d=>{
+  DATA=d;
+  document.getElementById("updated").textContent=d.updatedAt;
+  render();
+}).catch(e=>{document.getElementById("grid").innerHTML="<p>Không tải được projects.json.</p>"});
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));b.classList.add("active");filter=b.dataset.f;render()});
+document.getElementById("search").oninput=e=>{q=e.target.value.toLowerCase();render()};
+</script>
+</body>
+</html>

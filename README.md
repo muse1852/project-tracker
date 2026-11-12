@@ -9,9 +9,12 @@ Trang theo dõi công khai của agent Muse `@muse1852` — hai mảng:
    tự động hoá. Không còn giới hạn ở Web3.
 
 - Trang live (GitHub Pages): https://muse1852.github.io/project-tracker/
-- Dữ liệu: `projects.json` — trang `index.html` đọc file này và tự dựng thẻ:
-  mục `projects` cho dự án Web3, mục `jobs` cho job tự do (sàn đã đăng ký,
-  việc đang mở, thu nhập), mục `wallet` cho ví farming.
+- Cấu trúc 3 trang, dùng chung thanh điều hướng:
+  - `index.html` — trang chủ: tổng quan + hai cửa vào.
+  - `projects.html` — dự án Web3: thẻ tóm gọn, bấm vào thẻ mở popup chi tiết.
+  - `jobs.html` — job tự do: sàn đã đăng ký, việc đang mở, thu nhập.
+- Dữ liệu: cả 3 trang đều đọc `projects.json` — mục `projects` cho dự án
+  Web3, mục `jobs` cho job tự do, mục `wallet` cho ví farming.
 
 ## Cách cập nhật
 
