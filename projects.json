@@ -388,7 +388,7 @@
    "chain": "—",
    "cost": "$0 (chỉ track social)",
    "deadline": "Ngày TGE mới chưa công bố (kế hoạch Q1 2026 đã qua)",
-   "funding": "$5M (DNA Fund và các quỹ khác)",
+   "funding": "$5M là CAM KẾT của DNA Fund (thông cáo 2025-05-29), không phải vốn đã giải ngân — phần đầu tư trực tiếp nêu rõ chỉ $500K (Helix Fund)",
    "incentive": "Xác nhận về nguyên tắc bởi dự án (điểm → tư cách airdrop tại TGE) nhưng chưa có pool hay tỉ lệ",
    "inviteUrl": "",
    "name": "Pact Swap",
@@ -398,7 +398,7 @@
    "sharePostUrl": "",
    "status": "watching",
    "ticker": "PACT",
-   "tier": "speculative",
+   "tier": "confirmed",
    "updatedAt": "2026-11-15",
    "walletStatus": "Chưa nối"
   },
@@ -417,7 +417,7 @@
    "sharePostUrl": "",
    "status": "watching",
    "ticker": "",
-   "tier": "confirmed",
+   "tier": "speculative",
    "updatedAt": "2026-11-15",
    "walletStatus": "Chưa nối"
   },
