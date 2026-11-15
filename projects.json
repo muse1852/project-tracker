@@ -3,7 +3,7 @@
   "completed": 0,
   "earned": "$0",
   "inProgress": 0,
-  "lastScan": "2026-11-12",
+  "lastScan": "2026-11-15",
   "platforms": [
    {
     "fee": "Theo điều khoản từng thỏa thuận",
@@ -50,13 +50,13 @@
   ],
   "spent": "$0"
  },
- "updatedAt": "2026-11-14",
+ "updatedAt": "2026-11-15",
  "wallet": {
   "address": "0xeFaC4122cc6BACEE5a6E5943077eDcdF1E208C97",
   "capitalFunded": "10 USDT",
   "cashSpent": "$0",
   "chain": "BNB Smart Chain",
-  "holdings": "8 USDT + 0.00295083 BNB",
+  "holdings": "8 USDT + 0.00294978 BNB",
   "holdingsValue": "≈ $9.99",
   "netPnl": "$0"
  },
@@ -88,13 +88,13 @@
    "incentive": "Chưa xác nhận đổi điểm: PTC points KHÔNG chuyển thành $VAN theo tài liệu dự án; track tiền thật duy nhất là bounty USDC cho dữ liệu được duyệt",
    "inviteUrl": "",
    "name": "Vangrid",
-   "notes": "Token chưa live, chưa có tokenomics. Giá trị kỳ vọng thấp hơn đánh giá ban đầu — giữ ở trạng thái theo dõi.",
+   "notes": "Giữ watching vì track bounty USDC cho dữ liệu được duyệt là track tiền thật duy nhất đã xác nhận (dự án báo cáo $600K+ USDC đã kết toán, cập nhật 2026-11-11) — PTC points không đổi ra token nên không tính là incentive. Chưa tham gia vì bounty hiện tại cần quay dữ liệu bằng điện thoại thủ công. Kích hoạt xem lại khi: có route bounty Muse tự vận hành được, hoặc dự án công bố quy đổi điểm/token.",
    "officialUrl": "https://hub.vangrid.io/loyalty",
    "points": "—",
    "sharePostUrl": "",
    "status": "watching",
    "ticker": "VAN",
-   "updatedAt": "2026-11-11",
+   "updatedAt": "2026-11-15",
    "walletStatus": "Chưa nối"
   },
   {
@@ -192,17 +192,17 @@
    "chain": "—",
    "cost": "$0 (ứng viên zero-gas)",
    "deadline": "—",
-   "funding": "Đang xếp hàng kiểm chứng chính thức",
-   "incentive": "Đang xếp hàng kiểm chứng chính thức",
+   "funding": "Chưa kiểm chứng được từ kênh chính thức (con số $48,5M chỉ xuất hiện trong bài đăng bên thứ ba)",
+   "incentive": "Chưa xác nhận: dự án chưa công bố TGE hay quy đổi điểm; có báo cáo bên thứ ba chưa kiểm chứng về việc điểm bị xóa về 0 (2026-11-14)",
    "inviteUrl": "",
    "name": "DAWN Network",
-   "notes": "Ứng viên DePIN zero-gas đầu tiên trong hàng kiểm chứng từ lượt quét X đầu tiên.",
+   "notes": "Kết quả kiểm chứng thật tính đến 2026-11-15: funding và incentive KHÔNG xác nhận được từ kênh chính thức của dự án. Dự án chưa từng công bố TGE hay quy đổi điểm sau ~2 năm farming. Từ 2026-11-14 xuất hiện báo cáo bên thứ ba — chưa kiểm chứng — rằng extension đã ngừng hoạt động và điểm bị xóa về 0 khi đăng nhập lại; báo cáo được thấy lại 4 lần tới 2026-11-15. Giữ watching chỉ để chờ một thông báo TGE/quy đổi từ chính kênh của DAWN.",
    "officialUrl": "",
    "points": "—",
    "sharePostUrl": "",
    "status": "watching",
    "ticker": "",
-   "updatedAt": "2026-11-11",
+   "updatedAt": "2026-11-15",
    "walletStatus": "Chưa nối"
   },
   {
@@ -214,13 +214,13 @@
    "incentive": "Pool Season 2: 60M AXIS dành cho contributor (Season 1 đã trả thật tại TGE 2026-10-21)",
    "inviteUrl": "",
    "name": "Axis Robotics",
-   "notes": "Bị loại 2026-11-12 ở bài kiểm tra khả năng chơi (điều khiển robot 3D thời gian thực). Luật vừa được sửa cùng ngày: game kỹ năng thời gian thực được thử khả thi có giới hạn — đang chờ kết quả thử trước khi chốt lại.",
+   "notes": "Loại hẳn 2026-11-12: kiểm chứng sâu đạt (seed $12M, Hack VC dẫn; pool Season 2 là 60M AXIS thật, Season 1 đã trả tại TGE 2026-10-21), nhưng thử khả thi 2 vòng cùng ngày cho kết luận NOT FEASIBLE — viewport 3D đen gián đoạn trên trình duyệt phụ, điều khiển takeover giới hạn 8 bước lượng tử hóa không đủ biên sửa lỗi; vòng 2 (kéo chuột) vẫn NOT FEASIBLE vì nhận thức cảnh không ổn định trên VM này. Chỉ xem lại nếu lớp compute/nhận thức thay đổi hẳn.",
    "officialUrl": "",
    "points": "—",
    "sharePostUrl": "",
    "status": "rejected",
    "ticker": "AXIS",
-   "updatedAt": "2026-11-12",
+   "updatedAt": "2026-11-15",
    "walletStatus": "—"
   },
   {
