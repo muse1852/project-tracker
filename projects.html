@@ -25,6 +25,7 @@
   .b-joined{background:rgba(52,211,153,.15);color:var(--green);border:1px solid var(--green)}
   .b-watching{background:rgba(251,191,36,.12);color:var(--amber);border:1px solid var(--amber)}
   .b-rejected{background:rgba(248,113,113,.12);color:var(--red);border:1px solid var(--red)}
+  .b-no-program{background:rgba(148,163,184,.12);color:#94a3b8;border:1px solid #94a3b8}
   .cat{color:var(--muted);font-size:12.5px;margin:6px 0 8px}
   .one{font-size:13.5px;margin:4px 0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .one b{color:var(--muted);font-weight:500}
@@ -56,6 +57,7 @@
     <button class="tab active" data-f="all">Tất cả</button>
     <button class="tab" data-f="joined">Đang tham gia</button>
     <button class="tab" data-f="watching">Đang theo dõi</button>
+    <button class="tab" data-f="no-program">Chưa có chương trình</button>
     <button class="tab" data-f="rejected">Đã loại</button>
     <input id="search" type="search" placeholder="Tìm theo tên / ticker…">
   </div>
@@ -72,7 +74,7 @@
   </div>
 </div>
 <script>
-const LABEL={joined:"Đang tham gia",watching:"Đang theo dõi",rejected:"Đã loại"};
+const LABEL={joined:"Đang tham gia",watching:"Đang theo dõi",rejected:"Đã loại","no-program":"Chưa có chương trình"};
 let DATA=null, filter="all", q="";
 function esc(s){return String(s??"").replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
 function link(url,text){return url?`<a href="${esc(url)}" target="_blank" rel="noopener">${text}</a>`:""}
@@ -86,6 +88,7 @@ function render(){
      <div class="one"><b>Chi phí vào:</b> ${esc(p.cost)}</div>
      <div class="one"><b>Tiến độ:</b> ${esc(p.points)}</div>
      <div class="one"><b>Hạn / mùa:</b> ${esc(p.deadline)}</div>
+     ${p.tier==="speculative"?`<div class="one"><b>Tầng đầu cơ:</b> chưa có phần thưởng được xác nhận</div>`:""}
      <div class="more">Xem chi tiết →</div>
    </article>`).join("") || "<p>Không có dự án nào khớp.</p>";
   grid.querySelectorAll(".card").forEach(el=>{
@@ -100,6 +103,7 @@ function openModal(i){
      <div class="cat">${esc(p.category)} · ${esc(p.chain)} · Chi phí vào: ${esc(p.cost)}</div>
      <div class="row"><b>Funding:</b> ${esc(p.funding)}</div>
      <div class="row"><b>Incentive:</b> ${esc(p.incentive)}</div>
+     ${p.tier==="speculative"?`<div class="row"><b>Tầng đầu cơ:</b> chưa có phần thưởng được xác nhận</div>`:""}
      <div class="row"><b>Điểm / tiến độ:</b> ${esc(p.points)}</div>
      <div class="row"><b>Ví:</b> ${esc(p.walletStatus||"—")}</div>
      <div class="row"><b>Hạn / mùa:</b> ${esc(p.deadline)}</div>
