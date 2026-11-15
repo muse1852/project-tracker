@@ -77,7 +77,8 @@
    "status": "joined",
    "ticker": "VMKS",
    "updatedAt": "2026-11-15",
-   "walletStatus": "Đã nối ví burner (3/3)"
+   "walletStatus": "Đã nối ví burner (3/3)",
+   "tier": "confirmed"
   },
   {
    "category": "DePIN — dữ liệu không gian",
@@ -95,7 +96,8 @@
    "status": "watching",
    "ticker": "VAN",
    "updatedAt": "2026-11-15",
-   "walletStatus": "Chưa nối"
+   "walletStatus": "Chưa nối",
+   "tier": "confirmed"
   },
   {
    "category": "DePIN — robotics",
@@ -106,14 +108,15 @@
    "incentive": "Chưa được kênh chính thức xác nhận: chương trình điểm → KNX chỉ có ở guide bên thứ ba",
    "inviteUrl": "",
    "name": "Konnex",
-   "notes": "Testnet đang chạy. Chỉ tham gia khi dự án tự xác nhận cơ chế đổi điểm và ngày TGE.",
+   "notes": "Tầng đầu cơ — chưa có phần thưởng được xác nhận (tỉ lệ quy đổi KP → KNX và ngày TGE chưa công bố). Chương trình Konnex Points đang mở trên hub chính thức; theo dõi chờ tokenomics hoặc thông báo TGE.",
    "officialUrl": "https://konnex.world",
    "points": "—",
    "sharePostUrl": "",
    "status": "watching",
    "ticker": "KNX",
-   "updatedAt": "2026-11-11",
-   "walletStatus": "Chưa nối"
+   "updatedAt": "2026-11-15",
+   "walletStatus": "Chưa nối",
+   "tier": "speculative"
   },
   {
    "category": "Game — đào GEMS",
@@ -131,7 +134,8 @@
    "status": "watching",
    "ticker": "BULL",
    "updatedAt": "2026-11-12",
-   "walletStatus": "Chưa nối"
+   "walletStatus": "Chưa nối",
+   "tier": "confirmed"
   },
   {
    "category": "Mạng lưới phần mềm do agent vận hành — waitlist email",
@@ -149,7 +153,8 @@
    "status": "watching",
    "ticker": "",
    "updatedAt": "2026-11-11",
-   "walletStatus": "—"
+   "walletStatus": "—",
+   "tier": "confirmed"
   },
   {
    "category": "Waitlist email",
@@ -164,10 +169,11 @@
    "officialUrl": "",
    "points": "—",
    "sharePostUrl": "",
-   "status": "watching",
+   "status": "no-program",
    "ticker": "ARCH",
-   "updatedAt": "2026-11-11",
-   "walletStatus": "—"
+   "updatedAt": "2026-11-15",
+   "walletStatus": "—",
+   "tier": "confirmed"
   },
   {
    "category": "L1 cho tổ chức tài chính",
@@ -182,10 +188,11 @@
    "officialUrl": "https://alta.finance",
    "points": "—",
    "sharePostUrl": "",
-   "status": "watching",
+   "status": "no-program",
    "ticker": "",
-   "updatedAt": "2026-11-11",
-   "walletStatus": "—"
+   "updatedAt": "2026-11-15",
+   "walletStatus": "—",
+   "tier": "confirmed"
   },
   {
    "category": "DePIN — extension chia sẻ băng thông",
@@ -203,7 +210,8 @@
    "status": "watching",
    "ticker": "",
    "updatedAt": "2026-11-15",
-   "walletStatus": "Chưa nối"
+   "walletStatus": "Chưa nối",
+   "tier": "confirmed"
   },
   {
    "category": "Chương trình contributor Season 2",
@@ -221,7 +229,8 @@
    "status": "rejected",
    "ticker": "AXIS",
    "updatedAt": "2026-11-15",
-   "walletStatus": "—"
+   "walletStatus": "—",
+   "tier": "confirmed"
   },
   {
    "category": "Testnet có incentive",
@@ -239,7 +248,8 @@
    "status": "rejected",
    "ticker": "ASE",
    "updatedAt": "2026-11-11",
-   "walletStatus": "—"
+   "walletStatus": "—",
+   "tier": "confirmed"
   },
   {
    "category": "Game MMORPG (Solana Mobile)",
@@ -257,7 +267,8 @@
    "status": "rejected",
    "ticker": "BUDS",
    "updatedAt": "2026-11-11",
-   "walletStatus": "Không có ví Solana"
+   "walletStatus": "Không có ví Solana",
+   "tier": "confirmed"
   },
   {
    "category": "Chương trình điểm CP",
@@ -275,7 +286,8 @@
    "status": "rejected",
    "ticker": "",
    "updatedAt": "2026-11-12",
-   "walletStatus": "—"
+   "walletStatus": "—",
+   "tier": "confirmed"
   },
   {
    "category": "Whitelist mint",
@@ -293,7 +305,8 @@
    "status": "rejected",
    "ticker": "AGI",
    "updatedAt": "2026-11-12",
-   "walletStatus": "Không có Binance Agent ID"
+   "walletStatus": "Không có Binance Agent ID",
+   "tier": "confirmed"
   },
   {
    "category": "Telegram Mini App — đào điểm",
@@ -311,7 +324,8 @@
    "status": "rejected",
    "ticker": "APXN",
    "updatedAt": "2026-11-12",
-   "walletStatus": "—"
+   "walletStatus": "—",
+   "tier": "confirmed"
   },
   {
    "category": "Game sprint trên web — điểm Aura → giải IPX/USDC",
@@ -328,7 +342,160 @@
    "status": "joined",
    "ticker": "IPX",
    "updatedAt": "2026-11-14",
-   "walletStatus": "Không cần ví — đăng nhập bằng X (@muse1852)"
+   "walletStatus": "Không cần ví — đăng nhập bằng X (@muse1852)",
+   "tier": "confirmed"
+  },
+  {
+   "category": "ZK identity / dữ liệu — XP points",
+   "chain": "—",
+   "cost": "$0",
+   "deadline": "Chưa có ngày TGE",
+   "funding": "$6,5M seed (VanEck, Dispersion Capital, Symbolic Capital) + $500K incubation YZi Labs",
+   "incentive": "Chưa xác nhận: dự án chưa công bố token/airdrop hay quy đổi XP",
+   "inviteUrl": "",
+   "name": "Primus Labs",
+   "notes": "Chương trình XP/AlphaNet đang mở. Chỉ xem lại khi dự án xác nhận token/airdrop và quy đổi.",
+   "officialUrl": "https://points.primuslabs.xyz",
+   "points": "—",
+   "sharePostUrl": "",
+   "status": "watching",
+   "ticker": "",
+   "tier": "confirmed",
+   "updatedAt": "2026-11-15",
+   "walletStatus": "Chưa nối"
+  },
+  {
+   "category": "Neobank stablecoin tự quản — AS Points",
+   "chain": "—",
+   "cost": "$0",
+   "deadline": "Chưa có ngày TGE",
+   "funding": "$6,5M+ (DraperDragon, Amber, KuCoin Ventures; seed $5M do YZi Labs dẫn)",
+   "incentive": "Chưa xác nhận: chưa có token/airdrop/ngày/tỉ lệ; điều khoản nói rõ không bảo đảm phần thưởng",
+   "inviteUrl": "",
+   "name": "AllScale",
+   "notes": "AS Points đang mở (task, streak, nhận thanh toán). Track miễn phí mỏng; giữ theo dõi.",
+   "officialUrl": "https://app.allscale.io",
+   "points": "—",
+   "sharePostUrl": "",
+   "status": "watching",
+   "ticker": "",
+   "tier": "confirmed",
+   "updatedAt": "2026-11-15",
+   "walletStatus": "Chưa nối"
+  },
+  {
+   "category": "DEX cross-chain — Loyalty Hub points",
+   "chain": "—",
+   "cost": "$0 (chỉ track social)",
+   "deadline": "Ngày TGE mới chưa công bố (kế hoạch Q1 2026 đã qua)",
+   "funding": "$5M (DNA Fund và các quỹ khác)",
+   "incentive": "Xác nhận về nguyên tắc bởi dự án (điểm → tư cách airdrop tại TGE) nhưng chưa có pool hay tỉ lệ",
+   "inviteUrl": "",
+   "name": "Pact Swap",
+   "notes": "Chỉ làm track social; không làm quest khối lượng swap. Xem lại khi có ngày TGE mới.",
+   "officialUrl": "https://hub.pactswap.io/loyalty",
+   "points": "—",
+   "sharePostUrl": "",
+   "status": "watching",
+   "ticker": "PACT",
+   "tier": "confirmed",
+   "updatedAt": "2026-11-15",
+   "walletStatus": "Chưa nối"
+  },
+  {
+   "category": "App layer Dogecoin — quest campaign",
+   "chain": "—",
+   "cost": "$0",
+   "deadline": "Chưa có ngày TGE",
+   "funding": "$6,9M seed (Polychain Capital dẫn)",
+   "incentive": "Chưa xác nhận: dự án chưa công bố token/airdrop; quest không có quy đổi được xác nhận",
+   "inviteUrl": "",
+   "name": "DogeOS",
+   "notes": "Chiến dịch quest Grand Heist đang mở. Chỉ xem lại khi dự án xác nhận token/airdrop và quy đổi.",
+   "officialUrl": "",
+   "points": "—",
+   "sharePostUrl": "",
+   "status": "watching",
+   "ticker": "",
+   "tier": "confirmed",
+   "updatedAt": "2026-11-15",
+   "walletStatus": "Chưa nối"
+  },
+  {
+   "category": "ZK proof layer — waitlist",
+   "chain": "—",
+   "cost": "$0",
+   "deadline": "Chưa có ngày TGE",
+   "funding": "$5,2M seed (a16z CSX, Lemniscap, Bankless Ventures, LongHash)",
+   "incentive": "Chưa xác nhận: chưa có token, pool hay chương trình điểm đang mở",
+   "inviteUrl": "",
+   "name": "Fermah",
+   "notes": "Chương trình testnet cũ đã kết thúc (2025-09-15); mainnet hướng tới developer/operator.",
+   "officialUrl": "",
+   "points": "—",
+   "sharePostUrl": "",
+   "status": "watching",
+   "ticker": "",
+   "tier": "confirmed",
+   "updatedAt": "2026-11-15",
+   "walletStatus": "Chưa nối"
+  },
+  {
+   "category": "Hậu lượng tử — Quip Points",
+   "chain": "—",
+   "cost": "Tạo tài khoản ~0,0004 ETH",
+   "deadline": "Chưa có ngày TGE (mục tiêu Q2 2026 đã qua)",
+   "funding": "Portal Ventures, Orange DAO (số tiền huy động không công bố)",
+   "incentive": "Dự án xác nhận QP → $QUIP tại TGE (~10% cung ban đầu cho cộng đồng) nhưng chưa có tỉ lệ",
+   "inviteUrl": "",
+   "name": "Quip Network",
+   "notes": "Track miễn phí: check-in hằng ngày + paper swap không tốn gas. Chưa tham gia vì tạo tài khoản tốn ETH và chưa có ngày TGE.",
+   "officialUrl": "https://points.quip.network",
+   "points": "—",
+   "sharePostUrl": "",
+   "status": "watching",
+   "ticker": "QUIP",
+   "tier": "confirmed",
+   "updatedAt": "2026-11-15",
+   "walletStatus": "Chưa nối"
+  },
+  {
+   "category": "Agent-commerce marketplace — TP points",
+   "chain": "—",
+   "cost": "$0 (chỉ track social)",
+   "deadline": "Chưa có ngày TGE",
+   "funding": "$1M seed (YZi Labs)",
+   "incentive": "Chưa xác nhận: TP chưa có quy đổi → $TMT được dự án công bố",
+   "inviteUrl": "",
+   "name": "TermiX",
+   "notes": "TP Season 1 đang mở với track social miễn phí. Chỉ xem lại khi dự án xác nhận quy đổi và ngày TGE.",
+   "officialUrl": "",
+   "points": "—",
+   "sharePostUrl": "",
+   "status": "watching",
+   "ticker": "TMT",
+   "tier": "confirmed",
+   "updatedAt": "2026-11-15",
+   "walletStatus": "Chưa nối"
+  },
+  {
+   "category": "Mạng AI agent tài chính",
+   "chain": "—",
+   "cost": "$0",
+   "deadline": "Event Engine sắp ra mắt",
+   "funding": "Vòng gọi vốn ở định giá $100M (OKX Ventures, Lingfeng, DraperDragon…); số tiền huy động không công bố",
+   "incentive": "Chưa có: dự án chưa xác nhận điểm/airdrop/token",
+   "inviteUrl": "",
+   "name": "DI (Didot)",
+   "notes": "Chưa có chương trình — sản phẩm đầu (Event Engine) sắp ra mắt. Kiểm lại khi Event Engine mở.",
+   "officialUrl": "",
+   "points": "—",
+   "sharePostUrl": "",
+   "status": "no-program",
+   "ticker": "",
+   "tier": "confirmed",
+   "updatedAt": "2026-11-15",
+   "walletStatus": "Chưa nối"
   }
  ]
 }
