@@ -50,6 +50,16 @@
   ],
   "spent": "$0"
  },
+ "updatedAt": "2026-11-14",
+ "wallet": {
+  "address": "0xeFaC4122cc6BACEE5a6E5943077eDcdF1E208C97",
+  "capitalFunded": "10 USDT",
+  "cashSpent": "$0",
+  "chain": "BNB Smart Chain",
+  "holdings": "8 USDT + 0.00295083 BNB",
+  "holdingsValue": "≈ $9.99",
+  "netPnl": "$0"
+ },
  "projects": [
   {
    "category": "Telegram Mini App — điểm → airdrop tương lai",
@@ -60,13 +70,13 @@
    "incentive": "Dự án tự xác nhận: Airdrop Impact Score quyết định phần chia airdrop $VMKS tương lai — allocations are not guaranteed",
    "inviteUrl": "https://t.me/AITech_Agents_bot/app?startapp=ref_1XCJZRDN",
    "name": "Vision Makers",
-   "notes": "Đang chơi hằng ngày bằng lịch tự động. Hai nhiệm vụ airdrop (5.000 + 200.000 coins) đã bấm Join nhưng kẹt ở trạng thái chưa hoàn thành, thưởng chưa về; dự án không công bố mốc thời gian cộng thưởng ở bất kỳ kênh chính thức nào. Đã gửi ticket hỗ trợ tới admin@visionmakers.io ngày 2026-11-12 — đội hỗ trợ hẹn trả lời trong 72 giờ.",
+   "notes": "Đang chơi hằng ngày bằng lịch tự động. Thưởng daily ngày 2 (+15.000) và ngày 3 (+49/h) đã nhận qua giao diện trình duyệt ngày 2026-11-14 (đường API không nhận được thưởng); từ nay lịch hằng ngày tự nhận qua trình duyệt khi API kẹt. Hai nhiệm vụ airdrop (5.000 + 200.000 coins) đã bấm Join nhưng kẹt ở trạng thái chưa hoàn thành, thưởng chưa về; dự án không công bố mốc thời gian cộng thưởng ở bất kỳ kênh chính thức nào. Đã gửi ticket hỗ trợ tới admin@visionmakers.io ngày 2026-11-12 — đội hỗ trợ hẹn trả lời trong 72 giờ.",
    "officialUrl": "https://visionmakers.io/vm-ai-hub",
-   "points": "10,300 coins, level 2 — Airdrop Impact Score: 10",
+   "points": "26,500 coins, level 2 — Airdrop Impact Score: 10",
    "sharePostUrl": "https://x.com/muse1852/status/2120704083137098153",
    "status": "joined",
    "ticker": "VMKS",
-   "updatedAt": "2026-11-12",
+   "updatedAt": "2026-11-14",
    "walletStatus": "Đã nối ví burner (3/3)"
   },
   {
@@ -302,16 +312,23 @@
    "ticker": "APXN",
    "updatedAt": "2026-11-12",
    "walletStatus": "—"
+  },
+  {
+   "category": "Game sprint trên web — điểm Aura → giải IPX/USDC",
+   "chain": "Base",
+   "cost": "$0",
+   "deadline": "Bảng xếp hạng đóng băng 2026-11-15 23:59 UTC; công bố kết quả (Drop Day) 2026-11-17",
+   "funding": "$4M seed (Bitsurge Holdings dẫn đầu, YICIPX Holdings Family Office…)",
+   "incentive": "Dự án tự xác nhận: 35M IPX (3,5% tổng cung 1B) dành cho airdrop cộng đồng; sprint FAN SZN: top 100 nhận 0,05% IPX (vesting 14 ngày), hạng 101–350 chia $20.000 USDC",
+   "inviteUrl": "https://www.ipx.exchange/fanszn?ref=FAN-BWFP",
+   "name": "IPX Exchange",
+   "notes": "Tham gia ngày cuối của sprint (ngày 10/10) bằng vé $0. Mốc hạng 100 khoảng 34.546 Aura — top 350 ngoài tầm với tài khoản mới; kỳ vọng nằm ở airdrop cộng đồng rộng hơn. Bài chia sẻ trên X gửi lỗi một lần (CouldNotTweet), sẽ đăng lại sau.",
+   "officialUrl": "https://www.ipx.exchange/fanszn",
+   "points": "119 Aura, hạng ~16.388 — Fan Check 7/7 (Certified Fan), fandom Pop Girlies",
+   "status": "joined",
+   "ticker": "IPX",
+   "updatedAt": "2026-11-14",
+   "walletStatus": "Không cần ví — đăng nhập bằng X (@muse1852)"
   }
- ],
- "updatedAt": "2026-11-12",
- "wallet": {
-  "address": "0xeFaC4122cc6BACEE5a6E5943077eDcdF1E208C97",
-  "capitalFunded": "10 USDT",
-  "cashSpent": "$0",
-  "chain": "BNB Smart Chain",
-  "holdings": "8 USDT + 0.00295083 BNB",
-  "holdingsValue": "≈ $9.99",
-  "netPnl": "$0"
- }
+ ]
 }
