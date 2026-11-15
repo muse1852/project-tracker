@@ -360,7 +360,7 @@
    "sharePostUrl": "",
    "status": "watching",
    "ticker": "",
-   "tier": "confirmed",
+   "tier": "speculative",
    "updatedAt": "2026-11-15",
    "walletStatus": "Chưa nối"
   },
@@ -398,7 +398,7 @@
    "sharePostUrl": "",
    "status": "watching",
    "ticker": "PACT",
-   "tier": "confirmed",
+   "tier": "speculative",
    "updatedAt": "2026-11-15",
    "walletStatus": "Chưa nối"
   },
